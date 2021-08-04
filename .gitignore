@@ -1,0 +1,11 @@
+# Rust build output
+/debug
+/target
+**/*.rs.bk
+*.pdb
+
+# Temporary editor files
+*.swp
+
+# macOS metadata
+.DS_Store

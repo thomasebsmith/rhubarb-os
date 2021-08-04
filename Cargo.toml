@@ -1,0 +1,16 @@
+cargo-features = ["strip"]
+
+[package]
+name = "os"
+version = "0.1.0"
+authors = ["Thomas Smith"]
+edition = "2018"
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+strip = "symbols"

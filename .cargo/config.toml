@@ -1,0 +1,3 @@
+[build]
+target = "aarch64-unknown-none-softfloat"
+rustflags = ["-C", "link-arg=-Tsrc/link.ld", "-C", "target-cpu=cortex-a53"]
