@@ -13,3 +13,9 @@ $ cargo build --release
 $ qemu-system-aarch64 -M raspi3 -serial stdio -display none -kernel target/aarch64-unknown-none-softfloat/release/os
 ^C
 ```
+
+## Project Architecture
+RhubarbOS is designed as a microkernel -- the actual OS-level code running is
+minimal. On top of this minimal layer (which implements processes, virtual
+memory, threads, and some permissions), other parts of the OS are written as
+regular processes.
