@@ -19,3 +19,7 @@ RhubarbOS is designed as a microkernel -- the actual OS-level code running is
 minimal. On top of this minimal layer (which implements processes, virtual
 memory, threads, and some permissions), other parts of the OS are written as
 regular processes.
+
+## License
+RhubarbOS is licensed as open source software under the MIT License. See
+[LICENSE](./LICENSE) for details.
