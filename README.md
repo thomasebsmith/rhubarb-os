@@ -20,6 +20,15 @@ minimal. On top of this minimal layer (which implements processes, virtual
 memory, threads, and some permissions), other parts of the OS are written as
 regular processes.
 
+## Project Roadmap
+### v0.1 -- In Progress
+- Microkernel
+- Support processes, virtual memory, and threading
+
+### v0.2
+- File system support
+- Still no support for user-level programs
+
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
