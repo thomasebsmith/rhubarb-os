@@ -3,8 +3,8 @@ __entry = 0x80000;
 ENTRY(__entry)
 
 PHDRS {
-  rx_segment PT_LOAD FLAGS(0x4 | 0x1);
-  rw_segment PT_LOAD FLAGS(0x4 | 0x2);
+  rx_segment PT_LOAD FLAGS(0x4 | 0x1); /* Readable and executable */
+  rw_segment PT_LOAD FLAGS(0x4 | 0x2); /* Readable and writable */
 }
 
 SECTIONS {
@@ -13,6 +13,7 @@ SECTIONS {
   __boot_core_stack_end = .;
 
   .text : {
+    /* Always include _start since it is the entry point. */
     KEEP(*(.text._start))
     *(.text._start_os)
     *(.text*)
