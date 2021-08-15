@@ -9,6 +9,7 @@ RhubarbOS is a toy operating system for Raspberry Pi computers, written in Rust.
 ```sh
 $ git clone https://github.com/thomasebsmith/rhubarb-os.git
 $ cd rhubarb-os/
+$ rustup target add aarch64-unknown-none-softfloat
 $ cargo build --release
 $ qemu-system-aarch64 -M raspi3 -serial stdio -display none -kernel target/aarch64-unknown-none-softfloat/release/os
 ^C
