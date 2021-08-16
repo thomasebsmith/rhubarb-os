@@ -1,4 +1,4 @@
-name: Rust
+name: Rust CI
 
 on:
   push:
@@ -8,13 +8,19 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  build-debug:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Install target
       run: rustup target add aarch64-unknown-none-softfloat
-    - name: Build (debug)
+    - name: Build
       run: cargo build --verbose
-    - name: Build (release)
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install target
+      run: rustup target add aarch64-unknown-none-softfloat
+    - name: Build
       run: cargo build --release --verbose
