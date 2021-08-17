@@ -16,15 +16,15 @@ $ qemu-system-aarch64 -M raspi3 -serial stdio -display none -kernel target/aarch
 ```
 
 ## Project Architecture
-RhubarbOS is designed as a microkernel -- the actual OS-level code running is
-minimal. On top of this minimal layer (which implements processes, virtual
+RhubarbOS is designed as a microkernel &mdash; the actual OS-level code running
+is minimal. On top of this minimal layer (which implements processes, virtual
 memory, threads, and some permissions), other parts of the OS are written as
 regular processes.
 
 ## Project Roadmap
-### v0.1 -- In Progress
+### v0.1 &mdash; In Progress
 - Microkernel
-- Support processes, virtual memory, and threading
+- Processes, virtual memory, and threading support
 
 ### v0.2
 - File system support
