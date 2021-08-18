@@ -30,6 +30,10 @@ regular processes.
 - File system support
 - Still no support for user-level programs
 
+### v0.3
+- User interface support (GUIs and CLIs)
+- Support for user-level programs
+
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
