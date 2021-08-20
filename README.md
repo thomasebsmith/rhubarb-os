@@ -32,6 +32,7 @@ regular processes.
 
 ### v0.3
 - User interface support (GUIs and CLIs)
+- Support for custom drivers
 - Support for user-level programs
 
 ## License
