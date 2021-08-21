@@ -35,6 +35,10 @@ regular processes.
 - Support for custom drivers
 - Support for user-level programs
 
+### v0.4
+- Drivers for common Raspberry Pi peripherals included in the OS
+- Basic set of built-in apps included in the OS
+
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
