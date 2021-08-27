@@ -39,6 +39,11 @@ regular processes.
 - Drivers for common Raspberry Pi peripherals included in the OS
 - Basic set of built-in apps included in the OS
 
+### Later Versions
+After v0.4, future 0.x versions may be released to fix bugs or add new features.
+Once a basic set of features is implemented, the first stable version, v1.0,
+will be released.
+
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
