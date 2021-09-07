@@ -21,6 +21,9 @@ is minimal. On top of this minimal layer (which implements processes, virtual
 memory, threads, and some permissions), other parts of the OS are written as
 regular processes.
 
+To support this design, RhubarbOS's scheduler and IPC code will be highly
+optimized.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
