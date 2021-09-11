@@ -1,6 +1,10 @@
-type ProcessId = u64;
+use crate::thread::ThreadId;
 
-struct Process {
+pub type ProcessId = u64;
+
+pub struct Process {
+    // Process IDs are guaranteed to be unique among all currently running
+    //  processes. However, process IDs of exited processes may be reused.
     id: ProcessId,
 
     // runner_id is None if this is the root process. Otherwise, runner_id the
