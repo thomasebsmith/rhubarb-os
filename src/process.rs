@@ -1,6 +1,6 @@
 use crate::thread::ThreadId;
 
-pub type ProcessId = u64;
+pub struct ProcessId(u64);
 
 pub struct Process {
     // Process IDs are guaranteed to be unique among all currently running
