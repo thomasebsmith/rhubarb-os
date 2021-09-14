@@ -1,5 +1,8 @@
 use crate::thread::ThreadId;
 
+// There is a hard limit of at most 2^64 processes at once. It currently seems
+//  unlikely that computers will reach that limit since computers do not even
+//  have 2^64 bytes of memory (as of the writing of this comment).
 pub struct ProcessId(u64);
 
 pub struct Process {
