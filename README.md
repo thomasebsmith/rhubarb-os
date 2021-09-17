@@ -28,6 +28,11 @@ RhubarbOS is also designed to be secure. By default, processes have only
 minimal abilities. They must be granted permissions to perform most system
 calls, including all file system operations.
 
+Permissions are stored on disk, and since they are so integral to RhubarbOS's
+security model, the disk must be protected. Disk encryption is enabled by
+default, and the boot disk is protected from drivers and other low-level
+software.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
