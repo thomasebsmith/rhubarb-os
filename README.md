@@ -39,7 +39,7 @@ software.
 - Processes, virtual memory, and threading support
 
 ### v0.2
-- File system support
+- File system support (including secure permissions)
 - Still no support for user-level programs
 
 ### v0.3
