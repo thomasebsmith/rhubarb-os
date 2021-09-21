@@ -33,6 +33,10 @@ security model, the disk must be protected. Disk encryption is enabled by
 default, and the boot disk is protected from drivers and other low-level
 software.
 
+RhubarbOS's multiprocess design naturally protects against some security
+vulnerabilities. For example, the Meltdown attack should not work since
+RhubarbOS's processes do not have other processes' memory mapped.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
