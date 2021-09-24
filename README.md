@@ -55,6 +55,9 @@ RhubarbOS's processes do not have other processes' memory mapped.
 - Drivers for common Raspberry Pi peripherals included in the OS
 - Basic set of built-in apps included in the OS
 
+### v0.5
+- Official store for drivers and apps
+
 ### Later Versions
 After v0.4, future 0.x versions may be released to fix bugs or add new features.
 Once a basic set of features is implemented, the first stable version, v1.0,
