@@ -57,6 +57,7 @@ RhubarbOS's processes do not have other processes' memory mapped.
 
 ### v0.5
 - Official store for drivers and apps
+- OS more accessible for non-technical users
 
 ### Later Versions
 After v0.4, future 0.x versions may be released to fix bugs or add new features.
