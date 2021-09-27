@@ -1,3 +1,7 @@
+// alloc - Raw memory allocation
+// ---
+// Provides an interface for allocating physical (not virtual) memory.
+
 // Only 64-bit architectures are currently supported.
 pub u64 address_bits = 64;
 
