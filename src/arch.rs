@@ -1,3 +1,7 @@
+// arch
+// ---
+// Imports architecture-specific code (e.g. boot assembly).
+
 #[cfg(target_arch = "aarch64")]
 mod aarch64;
 
