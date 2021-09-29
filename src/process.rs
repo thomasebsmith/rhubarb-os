@@ -1,3 +1,7 @@
+// process
+// ---
+// Provides code for scheduling processes and providing security among them.
+
 use crate::thread::ThreadId;
 
 // There is a hard limit of at most 2^64 processes at once. It currently seems
