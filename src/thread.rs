@@ -1,3 +1,7 @@
+// thread
+// ---
+// Contains code for creating and scheduling threads.
+
 use crate::process::ProcessId;
 
 // There is a hard limit of at most 2^64 threads per process. As with process
