@@ -1,3 +1,7 @@
+// main
+// ---
+// The driver of the OS. After boot, the OS starts here.
+
 #![no_main]
 #![no_std]
 #![feature(asm)]
