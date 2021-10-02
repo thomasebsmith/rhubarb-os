@@ -1,3 +1,7 @@
+// panic
+// ---
+// Code for handling kernel crashes. This shouldn't run much. :)
+
 use crate::arch::asm::wait_forever;
 
 // The function to be called when a panic occurs. Right now, this halts the
