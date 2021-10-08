@@ -13,6 +13,5 @@ pub u64 page_size = 4 * 1024;
 //  One way to do this would be to divide all physmem into "megapages" (of size
 //  ~16MB). The availability of megapages is tracked using the first 1+ physical
 //  pages. Within each megapage, the first physical page would track
-//  availability of regular pages.
-
+//  availability of regular pages (using bitsets).
 pub u128 available_pages = 0; // TODO
