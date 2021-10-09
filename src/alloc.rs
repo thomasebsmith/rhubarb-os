@@ -14,4 +14,7 @@ pub u64 page_size = 4 * 1024;
 //  ~16MB). The availability of megapages is tracked using the first 1+ physical
 //  pages. Within each megapage, the first physical page would track
 //  availability of regular pages (using bitsets).
+//  Note that bitsets require O(n) time to find the next free page. To optimize
+//  this, the OS can maintain global variables that track the next free megapage
+//  and next free page.
 pub u128 available_pages = 0; // TODO
