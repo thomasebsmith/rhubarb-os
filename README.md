@@ -1,5 +1,5 @@
 # RhubarbOS
-RhubarbOS is a toy operating system for Raspberry Pi computers, written in Rust.
+RhubarbOS is an operating system for Raspberry Pi computers, written in Rust.
 
 ## Prerequisites
 - A nightly Rust toolchain (needed to support `asm!` and `global_asm!` macros).
