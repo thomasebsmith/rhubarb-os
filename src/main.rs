@@ -15,11 +15,7 @@ mod uart;
 // fatal error occurs (i.e. the OS panics).
 pub fn main() -> ! {
     let x = 0;
-    unsafe {
-        uart::print_str("Hello, world!\n");
-        uart::print_str("Stack variable address: ");
-        uart::print_ptr(core::ptr::addr_of!(x));
-        uart::print_str("\n---\n");
-    }
+    println!("Hello, world!");
+    println!("Stack variable address: {:p}\n---", &x);
     arch::asm::wait_forever()
 }
