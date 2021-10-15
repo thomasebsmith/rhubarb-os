@@ -11,12 +11,14 @@ unsafe fn print_char(ch: char) {
     core::ptr::write_volatile(UART_MMIO_ADDR as *mut u8, ch as u8);
 }
 
+// Prints a string to UART using MMIO.
 pub unsafe fn print_str(string: &str) {
     for ch in string.chars() {
         print_char(ch)
     }
 }
 
+// A Writer for UART using MMIO.
 struct Writer {}
 
 impl fmt::Write for Writer {
@@ -35,11 +37,13 @@ pub fn _print(args: fmt::Arguments) {
     Writer{}.write_fmt(args).unwrap();
 }
 
+// Prints to UART using MMIO.
 #[macro_export]
 macro_rules! print {
     ($($arg:tt)*) => ($crate::uart::_print(format_args!($($arg)*)));
 }
 
+// Prints a line to UART using MMIO.
 #[macro_export]
 macro_rules! println {
     () => ($crate::print!("\n"));
