@@ -25,6 +25,7 @@ regular processes.
 To support this design, RhubarbOS's scheduler and IPC code will be highly
 optimized.
 
+### Security
 RhubarbOS is also designed to be secure. By default, processes have only
 minimal abilities. They must be granted permissions to perform most system
 calls, including all file system operations.
