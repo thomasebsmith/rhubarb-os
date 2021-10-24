@@ -42,7 +42,9 @@ RhubarbOS's processes do not have other processes' memory mapped.
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
-- Processes, virtual memory, and threading support
+- Processes
+- Virtual memory
+- Threading and concurrency primitives
 
 ### v0.2 &mdash; Design Stage
 - File system support (including secure permissions)
