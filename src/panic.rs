@@ -5,8 +5,14 @@
 use crate::arch::asm::wait_forever;
 use crate::println;
 
-// The function to be called when a panic occurs. Right now, this halts the
-// processor (stack unwinding and similar features are not yet implemented).
+/// Ends the OS (causing it to crash) after printing crash information
+///
+/// Currently halts the processor (stack unwinding and similar features are not
+/// yet implemented).
+///
+/// # Arguments
+///
+/// * `info` - Information about the crash
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
     println!("{}", info);
