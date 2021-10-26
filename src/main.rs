@@ -11,8 +11,8 @@ mod arch;
 mod panic;
 mod uart;
 
-// This is the Rust entry point for the OS. It should not halt except when a
-// fatal error occurs (i.e. the OS panics).
+/// The Rust entry point for the OS. It should not halt except when a
+/// fatal error occurs (i.e. the OS panics) or the computer shuts down.
 pub fn main() -> ! {
     let x = 0;
     println!("---");
