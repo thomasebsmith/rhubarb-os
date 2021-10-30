@@ -1,6 +1,9 @@
 // thread
 // ---
 // Contains code for creating and scheduling threads.
+// The OS's core scheduler deals with threads, not processes,
+//  although threads' priorities are influenced by their parent
+//  processes' priorities.
 
 use crate::process::ProcessId;
 
