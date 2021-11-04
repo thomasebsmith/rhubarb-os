@@ -46,7 +46,7 @@ RhubarbOS's processes do not have other processes' memory mapped.
 - Virtual memory
 - Threading and concurrency primitives
 
-### v0.2 &mdash; Design Stage
+### v0.2 &mdash; In Design Stage
 - File system support (including secure permissions)
 - Still no support for user-level programs
 
