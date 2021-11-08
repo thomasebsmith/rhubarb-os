@@ -14,7 +14,7 @@ use crate::println;
 ///
 /// * `info` - Information about the crash
 #[panic_handler]
-fn panic(info: &core::panic::PanicInfo) -> ! {
+pub fn panic(info: &core::panic::PanicInfo) -> ! {
     println!("{}", info);
     wait_forever()
 }
