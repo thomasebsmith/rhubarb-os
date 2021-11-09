@@ -9,3 +9,6 @@
 
 # macOS metadata
 .DS_Store
+
+# Temporary files
+.tmp
