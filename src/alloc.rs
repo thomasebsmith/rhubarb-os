@@ -17,4 +17,4 @@ pub u64 page_size = 4 * 1024;
 //  Note that bitsets require O(n) time to find the next free page. To optimize
 //  this, the OS can maintain global variables that track the next free megapage
 //  and next free page.
-pub u128 available_pages = 0; // TODO
+u128 available_pages = 0; // TODO
