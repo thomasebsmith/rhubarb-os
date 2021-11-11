@@ -11,7 +11,11 @@ unsafe fn print_char(ch: char) {
     core::ptr::write_volatile(UART_MMIO_ADDR as *mut u8, ch as u8);
 }
 
-// Prints a string to UART using MMIO.
+/// Prints a string to UART using MMIO.
+///
+/// # Arguments
+///
+/// * `string` - The string to print
 pub unsafe fn print_str(string: &str) {
     for ch in string.chars() {
         print_char(ch)
