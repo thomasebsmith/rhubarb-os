@@ -44,13 +44,22 @@ pub fn _print(args: fmt::Arguments) {
     Writer{}.write_fmt(args).unwrap();
 }
 
-// Prints to UART using MMIO.
+/// Prints formatted argument(s) to UART using MMIO.
+///
+/// # Arguments
+///
+/// * `arg` - A value compatible with `format_args!`
 #[macro_export]
 macro_rules! print {
     ($($arg:tt)*) => ($crate::uart::_print(format_args!($($arg)*)));
 }
 
-// Prints a line to UART using MMIO.
+/// Prints formatted argument(s) to UART using MMIO, along with a new line
+/// character.
+///
+/// # Arguments
+///
+/// * `arg` - A value compatible with `format_args!`
 #[macro_export]
 macro_rules! println {
     () => ($crate::print!("\n"));
