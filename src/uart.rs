@@ -22,10 +22,18 @@ pub unsafe fn print_str(string: &str) {
     }
 }
 
-// A Writer for UART using MMIO.
+/// A struct that conforms to fmt::write and writes to UART via MMIO.
 struct Writer {}
 
 impl fmt::Write for Writer {
+    /// Writes a string to UART.
+    ///
+    /// # Arguments:
+    ///
+    /// * `string` - The string to write
+    ///
+    /// # Return value:
+    /// Whether the write succeeded
     fn write_str(&mut self, string: &str) -> fmt::Result {
         unsafe {
             print_str(string)
