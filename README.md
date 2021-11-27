@@ -72,8 +72,8 @@ will be released.
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
 
-Some third party software was used as a reference in the making of this project.
-See [LICENSE-THIRDPARTY](./LICENSE-THIRDPARTY) for details.
+Third party software was used as a reference in the making of this project.
+See [LICENSE-THIRDPARTY](./LICENSE-THIRDPARTY) for details about this software.
 
 ## Copyright
 Unless otherwise specified, all code is copyright &copy; 2021 Thomas Smith.
