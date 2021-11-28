@@ -45,6 +45,7 @@ impl fmt::Write for Writer {
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
     // FIXME: This is not thread-safe.
+    // This function is used internally to implement print! and println!.
     use fmt::Write;
     // It's OK to unwrap the result of write_fmt here.
     // If formatting fails, unwrap will panic, which is the desired behavior of
