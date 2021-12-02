@@ -46,6 +46,7 @@ impl fmt::Write for Writer {
 pub fn _print(args: fmt::Arguments) {
     // FIXME: This is not thread-safe.
     //  -> As a temporary fix, use a spinlock here.
+    //  TODO: Should this be an existing spinlock library or a custom implementation?
     // This function is used internally to implement print! and println!.
     use fmt::Write;
     // It's OK to unwrap the result of write_fmt here.
