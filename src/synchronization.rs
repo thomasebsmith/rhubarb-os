@@ -11,7 +11,13 @@ impl<T> SpinLock<T> {
     }
 
     pub fn lock(&self) -> MutexGuard<'_, T> {
-        // TODO: while !self.try_lock() {}
+        // Busy-wait until the lock is acquired.
+        loop {
+            match self.try_lock() {
+                Some(guard) => return guard,
+                None        => continue,
+            }
+        }
     }
 
     pub fn try_lock(&self) -> Option<MutexGuard<'_, T>> {
