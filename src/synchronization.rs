@@ -1,8 +1,8 @@
 use std::sync::atomic::{AtomicU64, AtomicBool};
 
 pub struct SpinLock<T: ?Sized> {
-    AtomicU64 holder_thread_id;
-    AtomicBool held;
+    AtomicU64 holder_thread_id; // Undefined value if !held
+    AtomicBool held;            // Whether this lock is held
 }
 
 impl<T> SpinLock<T> {
