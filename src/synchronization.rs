@@ -5,6 +5,10 @@ pub struct SpinLock<T: ?Sized> {
     AtomicBool held;            // Whether this lock is held
 }
 
+pub struct MutexGuard<'a, T> {
+    // TODO
+}
+
 impl<T> SpinLock<T> {
     // Creates a new, unlocked SpinLock.
     pub fn new(t: T) -> SpinLock<T> {
