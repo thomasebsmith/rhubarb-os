@@ -5,6 +5,7 @@ pub struct SpinLock<T: ?Sized> {
     AtomicBool held;            // Whether this lock is held
 }
 
+// Upon being dropped, releases the SpinLock that was used to acquire it.
 pub struct MutexGuard<'a, T> {
     // TODO
 }
