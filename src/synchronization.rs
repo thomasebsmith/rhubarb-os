@@ -1,13 +1,13 @@
 use std::sync::atomic::{AtomicU64, AtomicBool};
 
 pub struct SpinLock<T: ?Sized> {
-    AtomicU64 holder_thread_id; // Undefined value if !held
-    AtomicBool held;            // Whether this lock is held
+    holder_thread_id: AtomicU64; // Undefined value if !held
+    held: AtomicBool;            // Whether this lock is held
 }
 
 // Upon being dropped, releases the SpinLock that was used to acquire it.
 pub struct MutexGuard<'a, T> {
-    // TODO
+    value: &'a T;
 }
 
 impl<T> SpinLock<T> {
