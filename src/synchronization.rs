@@ -3,11 +3,18 @@ use std::sync::atomic::{AtomicU64, AtomicBool};
 pub struct SpinLock<T: ?Sized> {
     holder_thread_id: AtomicU64; // Undefined value if !held
     held: AtomicBool;            // Whether this lock is held
+    value: T;                    // The value guarded by this lock
 }
 
 // Upon being dropped, releases the SpinLock that was used to acquire it.
 pub struct MutexGuard<'a, T> {
-    value: &'a T;
+    mutex: &'a SpinLock<T>;
+}
+
+impl<'a, T> Drop for MutexGuard<'a, T> {
+    fn drop(&mut self) {
+        self.mutex.unlock()
+    }
 }
 
 impl<T> SpinLock<T> {
@@ -36,5 +43,9 @@ impl<T> SpinLock<T> {
         // 2. Set holder_thread_id to be the current thread ID
         // 3. Return a MutexGuard that contains the value and
         //    releases this SpinLock when it is dropped.
+    }
+
+    fn unlock(&self) {
+        // TODO
     }
 }
