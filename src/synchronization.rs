@@ -20,7 +20,7 @@ impl<'a, T> Drop for MutexGuard<'a, T> {
 impl<T> SpinLock<T> {
     // Creates a new, unlocked SpinLock.
     pub fn new(t: T) -> SpinLock<T> {
-        return SpinLock{0, false};
+        return SpinLock{AtomicU64::new(0), AtomicBool::new(false), t};
     }
 
     // Locks this SpinLock, busy-waiting if needed.
@@ -37,12 +37,16 @@ impl<T> SpinLock<T> {
     // Attempts to locks this SpinLock but does not wait if this
     // is not possible.
     pub fn try_lock(&self) -> Option<MutexGuard<'_, T>> {
-        // TODO:
-        // 1. Atomically acquire self.held
-        //    -> If this fails, return None
-        // 2. Set holder_thread_id to be the current thread ID
-        // 3. Return a MutexGuard that contains the value and
-        //    releases this SpinLock when it is dropped.
+        // TODO: Check this memory order.
+        match self.held.compare_exchange_weak(
+            false,
+            true,
+            Ordering::Acquire,
+            Ordering::Acquire
+        ) {
+            Ok(_) => Some(MutexGuard{&self}) // TODO: Set holder_thread_id.
+            Err(_) => None
+        }
     }
 
     fn unlock(&self) {
