@@ -1,9 +1,10 @@
 use std::sync::atomic::{AtomicU64, AtomicBool};
+use crate::thread::Thread;
 
 pub struct SpinLock<T: ?Sized> {
-    holder_thread_id: AtomicU64; // Undefined value if !held
-    held: AtomicBool;            // Whether this lock is held
-    value: T;                    // The value guarded by this lock
+    held: AtomicBool;      // Whether this lock is held
+    holder_thread_id: u64; // Undefined value if !held
+    value: T;              // The value guarded by this lock
 }
 
 // Upon being dropped, releases the SpinLock that was used to acquire it.
@@ -20,7 +21,7 @@ impl<'a, T> Drop for MutexGuard<'a, T> {
 impl<T> SpinLock<T> {
     // Creates a new, unlocked SpinLock.
     pub fn new(t: T) -> SpinLock<T> {
-        return SpinLock{AtomicU64::new(0), AtomicBool::new(false), t};
+        return SpinLock{AtomicBool::new(false), 0, t};
     }
 
     // Locks this SpinLock, busy-waiting if needed.
@@ -44,12 +45,15 @@ impl<T> SpinLock<T> {
             Ordering::Acquire,
             Ordering::Acquire
         ) {
-            Ok(_) => Some(MutexGuard{&self}) // TODO: Set holder_thread_id.
+            Ok(_) => {
+                self.holder_thread_id = Thread::get_current().id;
+                Some(MutexGuard{&self})
+            }
             Err(_) => None
         }
     }
 
     fn unlock(&self) {
-        // TODO
+        self.held.store(false, Ordering::Release);
     }
 }

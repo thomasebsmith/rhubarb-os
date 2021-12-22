@@ -20,3 +20,10 @@ pub struct Thread {
     // The ID of the process that is running this thread.
     pub parent_process_id: ProcessId,
 }
+
+impl Thread {
+    pub fn get_current() -> Thread {
+        // TODO
+        Thread{0, 0}
+    }
+}
