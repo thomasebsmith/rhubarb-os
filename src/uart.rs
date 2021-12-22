@@ -2,13 +2,16 @@
 // ---
 // Code for printing to UART serial output.
 
-// An address that outputs to UART serial output when written to.
-static UART_MMIO_ADDR: i64 = 0x3F201000;
-
 use core::fmt;
+use crate::sync::SpinLock;
 
-unsafe fn print_char(ch: char) {
-    core::ptr::write_volatile(UART_MMIO_ADDR as *mut u8, ch as u8);
+// A mutex protecting an address that outputs to UART serial output when
+// written to.
+static UART_MMIO_ADDR_LOCK: SpinLock<i64> = SpinLock::new(0x3F201000 as i64);
+
+// Writes a single character to addr. Not thread-safe.
+unsafe fn print_char(ch: char, addr: i64) {
+    core::ptr::write_volatile(addr as *mut u8, ch as u8);
 }
 
 /// Prints a string to UART using MMIO.
@@ -17,8 +20,9 @@ unsafe fn print_char(ch: char) {
 ///
 /// * `string` - The string to print
 pub unsafe fn print_str(string: &str) {
+    let guard = UART_MMIO_ADDR_LOCK.lock();
     for ch in string.chars() {
-        print_char(ch)
+        print_char(ch, *guard)
     }
 }
 
@@ -44,9 +48,6 @@ impl fmt::Write for Writer {
 
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
-    // FIXME: This is not thread-safe.
-    //  -> As a temporary fix, use a spinlock here.
-
     // This function is used internally to implement print! and println!.
     use fmt::Write;
     // It's OK to unwrap the result of write_fmt here.

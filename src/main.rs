@@ -6,9 +6,13 @@
 #![no_std]
 #![feature(asm)]
 #![feature(global_asm)]
+#![feature(negative_impls)]
 
 mod arch;
 mod panic;
+mod process;
+mod sync;
+mod thread;
 mod uart;
 
 /// The Rust entry point for the OS. It should not halt except when a
@@ -18,6 +22,13 @@ pub fn main() -> ! {
     println!("---");
     println!("Hello, world!");
     println!("Stack variable address: {:p}", &x);
+    println!("PID: {}", process::Process::get_current().id);
+    println!("TID: {}", thread::Thread::get_current().id);
+    {
+        let m = sync::SpinLock::new(3);
+        println!("Got value {} from lock", *m.try_lock().unwrap());
+    }
     println!("---");
+
     arch::asm::wait_forever()
 }
