@@ -19,6 +19,7 @@ impl<T: ?Sized> !Send for MutexGuard<'_, T> {}
 unsafe impl<T: ?Sized + Sync> Sync for MutexGuard<'_, T> {}
 
 impl<T: ?Sized> Drop for MutexGuard<'_, T> {
+    // Unlocks this mutex.
     fn drop(&mut self) {
         self.mutex.unlock()
     }
@@ -26,12 +27,15 @@ impl<T: ?Sized> Drop for MutexGuard<'_, T> {
 
 impl<T: ?Sized> Deref for MutexGuard<'_, T> {
     type Target = T;
+
+    // Returns a reference to the value guarded by the mutex.
     fn deref(&self) -> &T {
         unsafe { &*self.mutex.value.get() }
     }
 }
 
 impl<T: ?Sized> DerefMut for MutexGuard<'_, T> {
+    // Returns a mutable reference to the value guarded by the mutex.
     fn deref_mut(&mut self) -> &mut T {
         unsafe { &mut *self.mutex.value.get() }
     }
