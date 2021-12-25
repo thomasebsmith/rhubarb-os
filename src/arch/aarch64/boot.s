@@ -11,9 +11,9 @@
 .section .text._start
 
 _start:
-  mrs x1, MPIDR_EL1
-  and x1, x1, _cpu_core_affinity_mask
-  cmp x1, _boot_core_id
+  mrs x2, MPIDR_EL1
+  and x2, x2, _cpu_core_affinity_mask
+  cmp x2, _boot_core_id
   b.ne .L_wfe
   ABSOLUTE_SYMBOL x0, __bss_start
   ABSOLUTE_SYMBOL x1, __bss_end
@@ -26,6 +26,7 @@ _start:
 .L_boot:
   ABSOLUTE_SYMBOL x0, __boot_core_stack_end
   mov sp, x0
+  mov x0, x2
   b _start_os
 
 .L_wfe:

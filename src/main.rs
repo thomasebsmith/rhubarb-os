@@ -17,10 +17,11 @@ mod uart;
 
 /// The Rust entry point for the OS. It should not halt except when a
 /// fatal error occurs (i.e. the OS panics) or the computer shuts down.
-pub fn main() -> ! {
+pub fn main(cpu_id: i64) -> ! {
     let x = 0;
     println!("---");
     println!("Hello, world!");
+    println!("CPU ID: {}", cpu_id);
     println!("Stack variable address: {:p}", &x);
     println!("PID: {}", process::Process::get_current().id);
     println!("TID: {}", thread::Thread::get_current().id);
