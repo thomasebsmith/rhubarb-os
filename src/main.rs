@@ -21,7 +21,8 @@ pub fn main(cpu_id: i64) -> ! {
     let x = 0;
     println!("---");
     println!("Hello, world!");
-    println!("CPU ID: {}", cpu_id);
+    println!("Passed CPU ID: {}", cpu_id);
+    println!("Dynamic CPU ID: {}", arch::asm::get_cpu_id());
     println!("Stack variable address: {:p}", &x);
     println!("PID: {}", process::Process::get_current().id);
     println!("TID: {}", thread::Thread::get_current().id);

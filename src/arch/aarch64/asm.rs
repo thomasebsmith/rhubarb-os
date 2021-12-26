@@ -13,3 +13,18 @@ pub fn wait_forever() -> ! {
         }
     }
 }
+
+/// Returns the ID of the current CPU.
+pub fn get_cpu_id() -> u64 {
+    let mpidr_el1: u64;
+    unsafe {
+        asm!("mrs {}, MPIDR_EL1", out(reg) mpidr_el1);
+    }
+
+    // The last two bits of MPIDR_EL1 distinguish the 4 CPU cores on a
+    // Raspberry Pi.
+    const CPU_CORE_AFFINITY_MASK: u64 = 0b11;
+    let cpu_id = mpidr_el1 & CPU_CORE_AFFINITY_MASK;
+
+    return cpu_id;
+}
