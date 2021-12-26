@@ -15,6 +15,7 @@ SECTIONS {
   .text : {
     /* Always include _start since it is the entry point. */
     KEEP(*(.text._start))
+    *(.text._init_os)
     *(.text._start_os)
     *(.text*)
   } :rx_segment

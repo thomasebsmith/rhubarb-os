@@ -3,35 +3,23 @@
   add  \register, \register, #:lo12:\symbol
 .endm
 
-// Raspberry Pis have 4 cores. The last 2 bits of MPIDR_EL1 distinguish these
-// cores. The kernel starts on core 0.
-.equ _cpu_core_affinity_mask, 0b11
-.equ _boot_core_id, 0
-
 .section .text._start
 
 _start:
-  mrs x2, MPIDR_EL1
-  and x2, x2, _cpu_core_affinity_mask
-  cmp x2, _boot_core_id
-  b.ne .L_wfe
   ABSOLUTE_SYMBOL x0, __bss_start
   ABSOLUTE_SYMBOL x1, __bss_end
 .L_bss_initialize:
   cmp x0, x1
-  b.eq .L_boot
+  b.eq .L_init
   // This stores 16 bytes of zeroes at [x0] and then increments x0 by 16.
   stp xzr, xzr, [x0], #16
   b .L_bss_initialize
-.L_boot:
+.L_init:
   ABSOLUTE_SYMBOL x0, __boot_core_stack_end
   mov sp, x0
-  mov x0, x2
+  bl _init_os
+.L_boot:
   b _start_os
-
-.L_wfe:
-  wfe
-  b .L_wfe
 
 .size _start, . - _start
 .type _start, function

@@ -15,15 +15,24 @@ mod sync;
 mod thread;
 mod uart;
 
+pub fn init() {
+    if arch::asm::get_cpu_id() != 0 {
+        arch::asm::wait_forever();
+    }
+    println!("Initializing on core {}", arch::asm::get_cpu_id());
+}
+
 /// The Rust entry point for the OS. It should not halt except when a
 /// fatal error occurs (i.e. the OS panics) or the computer shuts down.
-pub fn main(cpu_id: i64) -> ! {
-    let x = 0;
+pub fn main() -> ! {
     println!("---");
     println!("Hello, world!");
-    println!("Passed CPU ID: {}", cpu_id);
+
     println!("Dynamic CPU ID: {}", arch::asm::get_cpu_id());
+
+    let x = 0;
     println!("Stack variable address: {:p}", &x);
+
     println!("PID: {}", process::Process::get_current().id);
     println!("TID: {}", thread::Thread::get_current().id);
     {
