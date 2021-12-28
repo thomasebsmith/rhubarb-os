@@ -14,7 +14,7 @@ pub fn wait_forever() -> ! {
     }
 }
 
-/// Returns the ID of the current CPU.
+/// Returns the ID of the current CPU (from 0-3 inclusive on a Raspberry Pi).
 pub fn get_cpu_id() -> u64 {
     let mpidr_el1: u64;
     unsafe {
