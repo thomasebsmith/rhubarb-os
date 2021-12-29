@@ -15,6 +15,7 @@ _start:
   stp xzr, xzr, [x0], #16
   b .L_bss_initialize
 .L_init:
+  // Each core runs the _init_os function followed by the _start_os function.
   ABSOLUTE_SYMBOL x0, __boot_core_stack_end
   mov sp, x0
   bl _init_os
