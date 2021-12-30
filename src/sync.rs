@@ -89,6 +89,8 @@ impl<T: ?Sized> SpinLock<T> {
         self.try_lock_helper(AtomicBool::compare_exchange)
     }
 
+    // Unlock this SpinLock. No busy-waiting is needed. This should not be
+    // called manually.
     fn unlock(&self) {
         self.held.store(false, Ordering::Release);
     }
