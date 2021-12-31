@@ -49,7 +49,11 @@ impl<T> SpinLock<T> {
 }
 
 impl<T: ?Sized> SpinLock<T> {
-    // Locks this SpinLock, busy-waiting if needed.
+    /// Locks this SpinLock, busy-waiting if needed.
+    ///
+    /// # Return value:
+    /// A struct that provides access to the guarded value and unlocks this
+    /// mutex when it is dropped
     pub fn lock(&self) -> MutexGuard<'_, T> {
         // Busy-wait until the lock is acquired.
         loop {
