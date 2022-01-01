@@ -19,7 +19,7 @@ impl<T: ?Sized> !Send for MutexGuard<'_, T> {}
 unsafe impl<T: ?Sized + Sync> Sync for MutexGuard<'_, T> {}
 
 impl<T: ?Sized> Drop for MutexGuard<'_, T> {
-    // Unlocks this mutex.
+    /// On drop, unlocks the mutex.
     fn drop(&mut self) {
         self.mutex.unlock()
     }
