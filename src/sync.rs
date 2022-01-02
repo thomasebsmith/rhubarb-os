@@ -28,14 +28,20 @@ impl<T: ?Sized> Drop for MutexGuard<'_, T> {
 impl<T: ?Sized> Deref for MutexGuard<'_, T> {
     type Target = T;
 
-    // Returns a reference to the value guarded by the mutex.
+    /// Gets the value guarded by the mutex.
+    ///
+    /// # Return value:
+    /// A reference to the value
     fn deref(&self) -> &T {
         unsafe { &*self.mutex.value.get() }
     }
 }
 
 impl<T: ?Sized> DerefMut for MutexGuard<'_, T> {
-    // Returns a mutable reference to the value guarded by the mutex.
+    /// Gets the value guarded by the mutex.
+    ///
+    /// # Return value:
+    /// A mutable reference to the value
     fn deref_mut(&mut self) -> &mut T {
         unsafe { &mut *self.mutex.value.get() }
     }
