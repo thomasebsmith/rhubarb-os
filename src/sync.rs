@@ -5,12 +5,13 @@ use core::sync::atomic::{AtomicBool, Ordering};
 type AcquireFn =
     fn(&AtomicBool, bool, bool, Ordering, Ordering) -> Result<bool, bool>;
 
+/// A mutex that synchronizes using busy-waiting and atomic variables.
 pub struct SpinLock<T: ?Sized> {
     held: AtomicBool,           // Whether this lock is held
     value: UnsafeCell<T>,       // The value guarded by this lock
 }
 
-// Upon being dropped, releases the SpinLock that was used to acquire it.
+/// Upon being dropped, releases the SpinLock that was used to acquire it.
 pub struct MutexGuard<'a, T: ?Sized> {
     mutex: &'a SpinLock<T>,
 }
