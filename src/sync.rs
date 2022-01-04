@@ -88,19 +88,25 @@ impl<T: ?Sized> SpinLock<T> {
 
     }
 
-    // Attempts to locks this SpinLock but does not wait if this is not
-    // possible. This may fail even if the lock is available.
+    /// Attempts to locks this SpinLock but does not wait if this is not
+    /// possible. This may fail even if the lock is available.
+    ///
+    /// # Return value:
+    /// None if locking failed, or a guard for this mutex if locking succeeded.
     pub fn try_lock_weak(&self) -> Option<MutexGuard<'_, T>> {
         self.try_lock_helper(AtomicBool::compare_exchange_weak)
     }
 
-    // Attempts to locks this SpinLock but does not wait if this is not
-    // possible. This will succeed if the lock is available.
+    /// Attempts to locks this SpinLock but does not wait if this is not
+    /// possible. This will succeed if the lock is available.
+    ///
+    /// # Return value:
+    /// None if locking failed, or a guard for this mutex if locking succeeded.
     pub fn try_lock(&self) -> Option<MutexGuard<'_, T>> {
         self.try_lock_helper(AtomicBool::compare_exchange)
     }
 
-    // Unlock this SpinLock. No busy-waiting is needed. This should not be
+    // Unlocks this SpinLock. No busy-waiting is needed. This should not be
     // called manually.
     fn unlock(&self) {
         self.held.store(false, Ordering::Release);
