@@ -49,7 +49,14 @@ impl<T: ?Sized> DerefMut for MutexGuard<'_, T> {
 }
 
 impl<T> SpinLock<T> {
-    // Creates a new, unlocked SpinLock.
+    /// Creates a SpinLock.
+    ///
+    /// # Arguments:
+    ///
+    /// * `t` - The value that the new SpinLock should hold.
+    ///
+    /// # Return value:
+    /// A new, unlocked SpinLock, holding `t`.
     pub const fn new(t: T) -> Self {
         Self { held: AtomicBool::new(false), value: UnsafeCell::new(t) }
     }
