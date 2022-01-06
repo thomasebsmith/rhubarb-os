@@ -120,5 +120,6 @@ impl<T: ?Sized> SpinLock<T> {
     }
 }
 
+// SpinLocks can be sent to other threads or accessed concurrently.
 unsafe impl<T: ?Sized + Send> Send for SpinLock<T> {}
 unsafe impl<T: ?Sized + Send> Sync for SpinLock<T> {}
