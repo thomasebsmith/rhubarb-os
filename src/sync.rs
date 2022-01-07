@@ -16,7 +16,12 @@ pub struct MutexGuard<'a, T: ?Sized> {
     mutex: &'a SpinLock<T>,
 }
 
+// Lock acquisitions are thread-local, so MutexGuards cannot be transferred
+// among threads.
 impl<T: ?Sized> !Send for MutexGuard<'_, T> {}
+
+// Lock acquisitions can be accessed from multiple threads. Rust's reference
+// rules enforce that references are safely used.
 unsafe impl<T: ?Sized + Sync> Sync for MutexGuard<'_, T> {}
 
 impl<T: ?Sized> Drop for MutexGuard<'_, T> {
