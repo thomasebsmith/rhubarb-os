@@ -9,7 +9,7 @@ use crate::sync::{MutexGuard, SpinLock};
 // written to.
 static UART_MMIO_ADDR_LOCK: SpinLock<i64> = SpinLock::new(0x3F201000 as i64);
 
-// Writes a single character to addr.
+// Writes a single character to `addr`.
 unsafe fn print_char(ch: char, guard: &MutexGuard<'_, i64>) {
     core::ptr::write_volatile(**guard as *mut u8, ch as u8);
 }
@@ -25,13 +25,13 @@ unsafe fn print_str(string: &str, guard: &MutexGuard<'_, i64>) {
     }
 }
 
-/// A struct that conforms to fmt::write and writes to UART via MMIO.
+/// A struct that conforms to fmt::write and writes to UART using MMIO.
 struct Writer<'a> {
     guard: &'a MutexGuard<'a, i64>,
 }
 
 impl fmt::Write for Writer<'_> {
-    /// Writes a string to UART.
+    /// Writes a string to UART using MMIO.
     ///
     /// # Arguments:
     ///
