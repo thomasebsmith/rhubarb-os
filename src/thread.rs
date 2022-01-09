@@ -14,7 +14,7 @@ pub struct ThreadId(pub u64);
 
 impl Display for ThreadId {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        self.0.fmt(f)
+        write!(f, "ThreadId({})", self.0)
     }
 }
 

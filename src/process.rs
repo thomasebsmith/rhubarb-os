@@ -11,7 +11,7 @@ pub struct ProcessId(pub u64);
 
 impl Display for ProcessId {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        self.0.fmt(f)
+        write!(f, "ProcessId({})", self.0)
     }
 }
 
