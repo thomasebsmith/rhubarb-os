@@ -16,10 +16,13 @@ mod thread;
 mod uart;
 
 pub fn init() {
-    if arch::asm::get_cpu_id() != 0 {
-        arch::asm::wait_forever();
+    use arch::asm::{get_cpu_id, wait_forever};
+
+    if get_cpu_id() != 0 {
+        wait_forever();
     }
-    println!("Initializing on core {}", arch::asm::get_cpu_id());
+
+    println!("Initializing on core {}", get_cpu_id());
 }
 
 /// The Rust entry point for the OS. It should not halt except when a
