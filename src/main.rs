@@ -15,9 +15,9 @@ mod sync;
 mod thread;
 mod uart;
 
-pub fn init() {
-    use arch::asm::{get_cpu_id, wait_forever};
+use arch::asm::{get_cpu_id, wait_forever};
 
+pub fn init() {
     if get_cpu_id() != 0 {
         wait_forever();
     }
@@ -31,7 +31,7 @@ pub fn main() -> ! {
     println!("---");
     println!("Hello, world!");
 
-    println!("Dynamic CPU ID: {}", arch::asm::get_cpu_id());
+    println!("Dynamic CPU ID: {}", get_cpu_id());
 
     let x = 0;
     println!("Stack variable address: {:p}", &x);
@@ -44,5 +44,5 @@ pub fn main() -> ! {
     }
     println!("---");
 
-    arch::asm::wait_forever()
+    wait_forever()
 }
