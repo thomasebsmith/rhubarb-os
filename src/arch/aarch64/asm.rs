@@ -24,7 +24,6 @@ pub fn get_cpu_id() -> u64 {
     // The last two bits of MPIDR_EL1 distinguish the 4 CPU cores on a
     // Raspberry Pi.
     const CPU_CORE_AFFINITY_MASK: u64 = 0b11;
-    let cpu_id = mpidr_el1 & CPU_CORE_AFFINITY_MASK;
 
-    return cpu_id;
+    return mpidr_el1 & CPU_CORE_AFFINITY_MASK;
 }
