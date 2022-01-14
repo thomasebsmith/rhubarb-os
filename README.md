@@ -3,7 +3,8 @@ RhubarbOS is an operating system for Raspberry Pi computers, written in Rust.
 
 ## Prerequisites
 - A nightly Rust toolchain (needed to support `asm!` and `global_asm!` macros).
-- [Recommended] QEMU (in order to run the operating system).
+- [Recommended] QEMU (in order to emulate the operating system).
+  Alternatively, an actual Raspberry Pi (to run the operating system).
 
 ## Quick Start
 ```sh
