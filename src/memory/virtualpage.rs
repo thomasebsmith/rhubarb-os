@@ -4,8 +4,13 @@
 
 use crate::process::ProcessId;
 
-pub struct VirtualPageLocation {
-    // TODO
+pub struct DiskBlock(pub u64);
+pub struct PhysicalPageNumber(pub u64);
+pub struct VirtualPageNumber(pub u64);
+
+pub enum VirtualPageLocation {
+    Evicted { diskBlock: DiskBlock },
+    Resident { physicalPageNumber: PhysicalPageNumber },
 }
 
 pub struct VirtualPage {
