@@ -17,8 +17,15 @@ pub enum VirtualPageLocation {
 }
 
 pub struct VirtualPage {
+    // The process that owns this page. Pages cannot be shared at the user level
     pub owner: ProcessId,
+
+    // Where this page is currently stored
     pub location: VirtualPageLocation,
+
+    // Whether this page can be modified
     pub writeEnabled: bool,
+
+    // Whether this page can be executed as machine code
     pub executeEnabled: bool,
 }
