@@ -28,4 +28,7 @@ pub struct VirtualPage {
 
     // Whether this page can be executed as machine code
     pub executeEnabled: bool,
+
+    // How recently used this page was used. Lower is more recent
+    pub recent_use_bits: u8,
 }
