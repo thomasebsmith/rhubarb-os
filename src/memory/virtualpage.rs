@@ -3,9 +3,8 @@
 // Represents a virtual page of memory.
 
 use crate::process::ProcessId;
+use physicalpage::{DiskBlock, PhysicalPageNumber};
 
-pub struct DiskBlock(pub u64);
-pub struct PhysicalPageNumber(pub u64);
 pub struct VirtualPageNumber(pub u64);
 
 pub enum VirtualPageLocation {
