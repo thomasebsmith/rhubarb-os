@@ -31,3 +31,8 @@ pub struct VirtualPage {
     // How recently used this page was used. Lower is more recent
     pub recent_use_bits: u8,
 }
+
+pub struct ProcessMemory {
+    // How many virtual pages a process is using
+    pub virtual_pages_in_use: u64;
+}
