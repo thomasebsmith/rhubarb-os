@@ -4,8 +4,6 @@
 
 #![no_main]
 #![no_std]
-#![feature(asm)]
-#![feature(global_asm)]
 #![feature(negative_impls)]
 
 mod arch;
