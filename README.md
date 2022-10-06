@@ -65,7 +65,7 @@ RhubarbOS's processes do not have other processes' memory mapped.
 - OS more accessible for non-technical users
 
 ### Later Versions
-After v0.4, future 0.x versions may be released to fix bugs or add new features.
+After v0.5, future 0.x versions may be released to fix bugs or add new features.
 Once a basic set of features is implemented, the first stable version, v1.0,
 will be released.
 
