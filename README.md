@@ -62,6 +62,7 @@ RhubarbOS's processes do not have other processes' memory mapped.
 
 ### v0.5
 - Official store for drivers and apps
+- Full installation guide
 - OS more accessible for non-technical users
 
 ### Later Versions
