@@ -19,12 +19,12 @@ $ qemu-system-aarch64 -M raspi3b -serial stdio -display none -kernel target/aarc
 
 ## Project Architecture
 RhubarbOS is designed as a microkernel &mdash; the actual OS-level code running
-is minimal. On top of this minimal layer (which implements processes, virtual
-memory, threads, and some permissions), other parts of the OS are written as
+is minimal. On top of this minimal layer, which implements processes, virtual
+memory, threads, and some permissions, other parts of the OS are written as
 regular processes.
 
-To support this design, RhubarbOS's scheduler and IPC code will be highly
-optimized.
+To support this design, RhubarbOS's scheduler, permission checks, and IPC code
+will be highly optimized.
 
 ### Security
 RhubarbOS is also designed to be secure. By default, processes have only
