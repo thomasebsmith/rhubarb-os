@@ -62,8 +62,8 @@ RhubarbOS's processes do not have other processes' memory mapped.
 - Basic set of built-in apps included in the OS
 
 ### v0.5
-- Official store for drivers and apps
-- Full installation guide
+- Official marketplace for drivers and apps
+- Detailed installation guide
 - OS more accessible for non-technical users
 
 ### Later Versions
