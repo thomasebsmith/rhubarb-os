@@ -30,7 +30,8 @@ will be highly optimized.
 ### Security
 RhubarbOS is also designed to be secure. By default, processes have only
 minimal abilities. They must be granted permissions to perform most system
-calls, including all file system operations.
+calls, including all file system operations. These permissions must be
+explicitly granted by an actual user.
 
 Permissions are stored on disk, and since they are so integral to RhubarbOS's
 security model, the disk must be protected. Disk encryption is enabled by
@@ -38,8 +39,8 @@ default, and the boot disk is protected from drivers and other low-level
 software.
 
 RhubarbOS's multiprocess design naturally protects against some security
-vulnerabilities. For example, the Meltdown attack should not work since
-RhubarbOS's processes do not have other processes' memory mapped.
+vulnerabilities. For example, the Meltdown attack does not work since
+RhubarbOS's processes cannot have other processes' memory mapped.
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
