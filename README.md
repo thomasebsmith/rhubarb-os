@@ -69,8 +69,8 @@ RhubarbOS's processes cannot have other processes' memory mapped.
 
 ### Later Versions
 After v0.5, future 0.x versions may be released to fix bugs or add new features.
-Once a basic set of features is implemented, the first stable version, v1.0,
-will be released.
+Once a basic set of features is implemented and the OS is fully usable, the
+first stable version, v1.0, will be released.
 
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
