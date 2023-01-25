@@ -64,6 +64,8 @@ RhubarbOS's processes cannot have other processes' memory mapped.
 
 ### v0.5
 - Official marketplace for drivers and apps
+- Automatic suggestions of official drivers for somewhat common Raspberry Pi
+  peripherals
 - Detailed installation guide
 - OS more accessible for non-technical users
 
