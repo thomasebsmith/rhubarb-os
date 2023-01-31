@@ -69,6 +69,7 @@ RhubarbOS's processes cannot have other processes' memory mapped.
   peripherals
 - Detailed installation guide
 - OS more accessible for non-technical users
+- Accessibility and troubleshooting modes
 
 ### Later Versions
 After v0.5, future 0.x versions may be released to fix bugs or add new features.
