@@ -43,6 +43,10 @@ RhubarbOS's multiprocess design naturally protects against some security
 vulnerabilities. For example, the Meltdown attack does not work since
 RhubarbOS's processes cannot have other processes' memory mapped.
 
+Processes can still share information via a high-level IPC API. A process can
+configure its IPC API to accept communication from a specific process or from
+any process.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
