@@ -73,6 +73,8 @@ any process.
 - Official marketplace for drivers and apps
 - Automatic suggestions of official drivers for somewhat common Raspberry Pi
   peripherals
+
+### v0.6
 - Detailed installation guide
 - OS more accessible for non-technical users
 - Accessibility and troubleshooting modes
