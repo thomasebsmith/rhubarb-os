@@ -6,11 +6,11 @@ RhubarbOS is an operating system for Raspberry Pi computers, written in Rust.
 - [Recommended] QEMU (in order to emulate the operating system).
   Alternatively, an actual Raspberry Pi (to run the operating system).
 
-  Note: RhubarbOS has not yet been tested on an actual Raspberry Pi.
+  Note: RhubarbOS has not yet been tested on an physical Raspberry Pi.
 
 ## Quick Start
 ```sh
-# Clone this repository, build a release binary, and run it in QEMU
+# Clone this repository, build a release binary, and emulate the OS in QEMU
 $ git clone https://github.com/thomasebsmith/rhubarb-os.git
 $ cd rhubarb-os/
 $ rustup target add aarch64-unknown-none-softfloat
