@@ -46,9 +46,9 @@ vulnerabilities. For example, the Meltdown attack does not work since
 RhubarbOS's processes cannot have other processes' memory mapped.
 
 ## Interprocess Communication
-Processes can still share information via a high-level IPC API. A process can
-configure its IPC API to accept communication from a specific process or from
-any process.
+Processes can still voluntarily share information via high-level IPC APIs. A
+process can configure its IPC API to accept communication from a specific
+process or from any process.
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
