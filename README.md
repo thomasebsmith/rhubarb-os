@@ -49,6 +49,11 @@ All APIs are exposed using low-overhead syscalls. Each syscall is handled by the
 parent process that launched the current program. Most user-run programs will
 have part of RhubarbOS as their parent process.
 
+### Modularity and Customizability
+Any program that has read access to another executable can run that executable
+within a custom context. Any APIs can be replaced with custom implementations,
+allowing users to introspect and modify any program.
+
 ### Interprocess Communication
 Processes can still voluntarily share information via high-level IPC APIs. A
 process can configure its IPC API to accept communication from a specific
