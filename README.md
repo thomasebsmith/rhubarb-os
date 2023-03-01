@@ -59,6 +59,8 @@ Processes can still voluntarily share information via high-level IPC APIs. A
 process can configure its IPC API to accept communication from a specific
 process or from any process.
 
+IPCs are also low-overhead. They are designed to consume minimal CPU and memory.
+
 ### User Interface
 RhubarbOS is designed for use via its CLI and GUI. Both are equally capable. The
 GUI is the default UI for new installations.
