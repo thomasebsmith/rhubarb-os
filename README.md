@@ -65,7 +65,7 @@ IPCs are also low-overhead. They are designed to consume minimal CPU and memory.
 RhubarbOS is designed for use via its CLI and GUI. Both are equally capable. The
 GUI is the default UI for new installations.
 
-Programs can and should be designed to expose their own CLIs and GUIs.
+Programs must be designed to expose their own CLIs and GUIs.
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
