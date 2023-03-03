@@ -110,4 +110,5 @@ Third party software was used as a reference in the making of this project.
 See [LICENSE-THIRDPARTY](./LICENSE-THIRDPARTY) for details about this software.
 
 ## Copyright
-Unless otherwise specified, all code is copyright &copy; 2021-2023 Thomas Smith.
+Unless otherwise specified, all content in this repository is copyright &copy;
+2021-2023 Thomas Smith.
