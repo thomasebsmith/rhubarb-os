@@ -67,6 +67,10 @@ GUI is the default UI for new installations.
 
 Programs must be designed to expose their own CLIs and GUIs.
 
+### Drivers
+A limited set of drivers for common Raapberry Pi peripherals is built in. More
+drivers are available through the marketplace.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
