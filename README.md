@@ -69,7 +69,8 @@ Programs must be designed to expose their own CLIs and GUIs.
 
 ### Drivers
 A limited set of drivers for common Raapberry Pi peripherals is built in. More
-drivers are available through the marketplace.
+drivers are available through the marketplace. Official marketplace drivers are
+automatically suggested for attached peripherals.
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
