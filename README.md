@@ -7,7 +7,7 @@ is intended to be a lightweight, secure alternative to Raspberry Pi OS.
 - [Recommended] QEMU (in order to emulate the operating system).
   Alternatively, an actual Raspberry Pi (to run the operating system).
 
-  Note: RhubarbOS has not yet been tested on an physical Raspberry Pi.
+  Note: RhubarbOS has not yet been tested on a physical Raspberry Pi.
 
 ## Quick Start
 ```sh
