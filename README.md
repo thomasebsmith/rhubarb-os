@@ -73,6 +73,9 @@ A limited set of drivers for common Raapberry Pi peripherals is built in. More
 drivers are available through the marketplace. Official marketplace drivers are
 automatically suggested for attached peripherals.
 
+Drivers are restricted so that they can only control the input from or output to
+a single device.
+
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
 - Microkernel
