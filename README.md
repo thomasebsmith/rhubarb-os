@@ -74,7 +74,7 @@ drivers are available through the marketplace. Official marketplace drivers are
 automatically suggested for attached peripherals.
 
 Drivers are restricted so that they can only control the input from or output to
-a single device.
+a single device (or multiple of the same device).
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
