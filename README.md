@@ -107,9 +107,9 @@ a single device (or multiple of the same device).
 - Accessibility and troubleshooting modes
 
 ### Later Versions
-After v0.6, future 0.x versions may be released to fix bugs or add new features.
-Once a basic set of features is implemented and the OS is fully usable, the
-first stable version, v1.0, will be released.
+After v0.6, future 0.x (beta) versions may be released to fix bugs or add new
+features. Once a basic set of features is implemented and the OS is fully
+usable, the first stable version, v1.0, will be released.
 
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
