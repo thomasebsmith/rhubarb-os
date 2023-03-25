@@ -40,7 +40,8 @@ explicitly granted by an actual user.
 Permissions are stored on disk, and since they are so integral to RhubarbOS's
 security model, the disk must be protected. Disk encryption is enabled by
 default, and the boot disk is protected from drivers and other low-level
-software.
+software. In higher-level software, permissions are unmodifiable except via
+explicit user action.
 
 RhubarbOS's multiprocess design naturally protects against some security
 vulnerabilities. For example, the Meltdown attack does not work since
