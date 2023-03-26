@@ -49,7 +49,7 @@ RhubarbOS's processes cannot have other processes' memory mapped.
 
 All APIs are exposed using low-overhead syscalls. Each syscall is handled by the
 parent process that launched the current program. Most user-run programs will
-have part of RhubarbOS as their parent process.
+have a native subprocess that is part of RhubarbOS as their parent process.
 
 ### Modularity and Customizability
 Any program that has read access to another executable can run that executable
