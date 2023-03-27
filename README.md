@@ -1,7 +1,7 @@
 # RhubarbOS
 RhubarbOS is an operating system for Raspberry Pi computers, written in Rust. It
 is intended to be a lightweight, secure, and customizable alternative to
-Raspberry Pi OS.
+Raspberry Pi OS and other general-purpose OSs that support the Pi.
 
 ## Prerequisites
 - A nightly Rust toolchain
