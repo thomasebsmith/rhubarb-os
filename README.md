@@ -112,6 +112,11 @@ After v0.6, future 0.x (beta) versions may be released to fix bugs or add new
 features. Once a basic set of features is implemented and the OS is fully
 usable, the first stable version, v1.0, will be released.
 
+## Contributing
+To contribute to this project, please find an issue to work on or open one based
+on what you want to work on. Then, create a corresponding PR. Your PR will be
+reviewed and hopefully approved and merged.
+
 ## License
 RhubarbOS is licensed as open source software under the MIT License. See
 [LICENSE](./LICENSE) for details.
