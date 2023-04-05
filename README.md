@@ -59,9 +59,10 @@ allowing users to introspect and modify any program.
 ### Interprocess Communication
 Processes can voluntarily share information via high-level IPC APIs. A process
 can configure its IPC API to accept communication from a specific process or
-from any process. Other processes must be identified using cryptographic
-certificates, which are validated using a certificate authority system similar
-to the internet's.
+from any process.
+
+Other processes must be identified using cryptographic certificates, which are
+validated using a certificate authority system similar to the internet's.
 
 IPCs are also low-overhead. They are designed to consume minimal CPU and memory.
 
