@@ -108,7 +108,7 @@ system.
   peripherals
 
 ### v0.6
-- Detailed installation guide
+- Detailed installation guide for supported Raspberry Pi computers
 - OS more accessible for non-technical users
 - Accessibility and troubleshooting modes
 
