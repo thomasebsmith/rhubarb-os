@@ -12,7 +12,7 @@ Raspberry Pi OS and other general-purpose OSs that support the Pi.
 
 ## Quick Start
 ```sh
-# Clone this repository, build a release binary, and emulate the OS in QEMU
+# To clone this repository, build a release binary, and emulate the OS in QEMU:
 $ git clone https://github.com/thomasebsmith/rhubarb-os.git
 $ cd rhubarb-os/
 $ rustup target add aarch64-unknown-none-softfloat
