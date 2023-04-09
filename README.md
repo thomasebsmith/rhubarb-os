@@ -67,10 +67,10 @@ validated using a certificate authority system similar to the internet's.
 IPCs are also low-overhead. They are designed to consume minimal CPU and memory.
 
 ### User Interface
-RhubarbOS is designed for use via its CLI and GUI. Both are equally capable. The
-GUI is the default UI for new installations.
+RhubarbOS is designed to be used via its CLI and GUI. Both are equally capable.
+The GUI is the default UI for new installations.
 
-Programs must be designed to expose their own CLIs and GUIs.
+Programs should be designed to expose their own CLIs and GUIs.
 
 ### Drivers
 A limited set of drivers for common Raapberry Pi peripherals is built in. More
