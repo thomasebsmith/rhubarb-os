@@ -66,6 +66,8 @@ validated using a certificate authority system similar to the internet's.
 
 IPCs are also low-overhead. They are designed to consume minimal CPU and memory.
 
+For security reasons, processes cannot share memory directly.
+
 ### User Interface
 RhubarbOS is designed to be used via its CLI and GUI. Both are equally capable.
 The GUI is the default UI for new installations.
