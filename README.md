@@ -86,6 +86,7 @@ system.
 
 ## Project Roadmap
 ### v0.1 &mdash; In Progress
+*Planned release: July 2023*
 - Microkernel
 - Processes
 - Virtual memory
