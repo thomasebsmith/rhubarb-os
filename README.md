@@ -93,6 +93,7 @@ system.
 - Threading and concurrency primitives
 
 ### v0.2 &mdash; In Design Stage
+*Planned release: December 2023*
 - File system support (including secure permissions)
 - Still no support for user-level programs
 
