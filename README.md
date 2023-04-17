@@ -98,6 +98,7 @@ system.
 - Still no support for user-level programs
 
 ### v0.3
+*Estimated release: July 2024*
 - User interface support (GUIs and CLIs)
 - Support for custom drivers
 - Support for user-level programs
