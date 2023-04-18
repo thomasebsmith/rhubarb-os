@@ -85,6 +85,10 @@ restriction, malicious drivers may still be capable of damaging or taking over a
 system.
 
 ## Project Roadmap
+Versions prior to v1.0 should be considered beta versions. They are designed to
+be completely functional, but they will still be undergoing testing as they are
+released.
+
 ### v0.1 &mdash; In Progress
 *Planned release: July 2023*
 - Microkernel
