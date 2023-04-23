@@ -108,6 +108,7 @@ released.
 - Support for user-level programs
 
 ### v0.4
+*Estimated release: July 2025*
 - Drivers for common Raspberry Pi peripherals included in the OS
 - Basic set of built-in apps included in the OS
 
