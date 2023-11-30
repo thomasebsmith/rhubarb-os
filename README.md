@@ -4,7 +4,7 @@ is intended to be a lightweight, secure, and customizable alternative to
 Raspberry Pi OS and other general-purpose OSs that support the Pi.
 
 ## Prerequisites
-- A nightly Rust toolchain
+- A recent nightly Rust toolchain
 - [Recommended] QEMU (in order to emulate the operating system).
   Alternatively, an actual Raspberry Pi (to run the operating system).
 
