@@ -143,4 +143,4 @@ compatible with the MIT License.
 
 ## Copyright
 Unless otherwise specified, all content in this repository is copyright &copy;
-2021-2023 Thomas Smith.
+2021-2024 Thomas Smith.
